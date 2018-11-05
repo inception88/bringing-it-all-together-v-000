@@ -92,6 +92,6 @@ class Dog
     SQL
 
     dog = DB[:conn].execute(sql, self.name, self.breed, self.id)[0]
-    Dog.new_from_db(dog)
+    self
   end
 end
