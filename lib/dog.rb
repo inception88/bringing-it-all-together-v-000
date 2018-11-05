@@ -51,7 +51,7 @@ class Dog
       WHERE id = ?
     SQL
 
-    dog = DB[:conn].execute(sql, id)
+    dog = DB[:conn].execute(sql, id)[0]
     self.new(id: dog[0], name: dog[1], breed: dog[2])
   end
 end
