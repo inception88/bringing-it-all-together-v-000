@@ -9,4 +9,14 @@ class Dog
     @breed = breed
   end
 
+  def self.create_table
+    sql = <<-SQL
+      CREATE TABLE dogs(
+        id INTEGER PRIMARY KEY,
+        
+      )
+    SQL
+
+    DB[:conn].execute(sql)
+  end
 end
