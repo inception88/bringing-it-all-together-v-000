@@ -13,7 +13,7 @@ class Dog
     sql = <<-SQL
       CREATE TABLE dogs(
         id INTEGER PRIMARY KEY,
-        
+
       )
     SQL
 
