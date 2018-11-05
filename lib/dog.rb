@@ -61,7 +61,9 @@ class Dog
       WHERE name = ?, breed = ?
     SQL
 
-    dog = DB[:conn].execute(sql, id)[0]
+    dog = DB[:conn].execute(sql, name, breed)[0]
+    if dog.empty?
+      Dog.create(name: name, breed: breed)
     self.new(id: dog[0], name: dog[1], breed: dog[2])
   end
 end
