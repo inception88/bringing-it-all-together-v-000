@@ -30,6 +30,12 @@ class Dog
   end
 
   def save
-    new_dog = 
+    sql = <<-SQL
+      INSERT INTO dogs
+      SET name = ?, breed = ?
+    SQL
+
+    DB[:conn].execute(sql, self.name, self.breed)
+    new_dog
   end
 end
