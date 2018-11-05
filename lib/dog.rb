@@ -65,7 +65,7 @@ class Dog
     if dog == nil
       dog = Dog.create(name: name, breed: breed)
     else
-      self.new(id: dog[0], name: dog[1], breed: dog[2])
+      self.new_from_db(dog)
     end
   end
 
