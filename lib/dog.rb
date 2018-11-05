@@ -77,10 +77,10 @@ class Dog
     sql = <<-SQL
       SELECT * FROM dogs
       WHERE name = ?
+      LIMIT 1
     SQL
 
     dog = DB[:conn].execute(sql, name)[0]
-    dog.collect {|dog| }
     self.new(id: dog[0], name: dog[1], breed: dog[2])
   end
 end
